@@ -20,12 +20,6 @@
                         "sourcePath": "/opt"
                     }
                 }
-            ],
-            "mountPoints": [
-                {
-                  "sourceVolume": "my",
-                  "containerPath": "/mnt"
-                }
             ]
         }
     ]
