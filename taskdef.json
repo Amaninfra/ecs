@@ -7,11 +7,11 @@
             "cpu": 10,
             "memory": 256,
             "essential": true,
-			"mountPoints": [
+	    "mountPoints": [
               {
                  "readOnly": null,
                  "containerPath": "/opt",
-                 "sourceVolume": "my"
+                 "sourceVolume": "/opt"
               }
             ],
             "portMappings": [
