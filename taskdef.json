@@ -1,5 +1,6 @@
 {
     "family": "hello-world",
+    "taskdefinition": {
     "volumes": [
     {
       "name": "webdata2",
@@ -7,6 +8,7 @@
         "sourcePath": "/opt"
       }
     }
+   }
   ],
     "containerDefinitions": [
         {
@@ -21,11 +23,11 @@
                     "hostPort": 80
                 }
             ],
-	    "mountPoints": [
-                {
-                   "sourceVolume": "webdata",
-                   "containerPath": "/mnt"
-                }
+			"mountPoints": [
+        {
+          "sourceVolume": "webdata",
+          "containerPath": "/mnt"
+        }
       ]
         }
     ]
