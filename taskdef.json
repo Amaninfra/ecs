@@ -1,5 +1,13 @@
 {
     "family": "hello-world",
+	"volumes": [
+    {
+      "name": "webdata",
+      "host": {
+        "sourcePath": "/mnt"
+       }
+     }
+    ],
     "containerDefinitions": [
         {
             "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
@@ -12,7 +20,13 @@
                     "containerPort": 80,
                     "hostPort": 80
                 }
-            ]
+            ],
+			"mountPoints": [
+               {
+                "sourceVolume": "webdata",
+                "containerPath": "/opt"
+        }
+      ]
         }
     ]
 }
