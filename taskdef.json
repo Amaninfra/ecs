@@ -1,6 +1,6 @@
 {
     "family": "hello-world",
-	"volumes": [
+    "volumes": [
     {
       "name": "webdata2",
       "host": {
@@ -21,11 +21,11 @@
                     "hostPort": 80
                 }
             ],
-			"mountPoints": [
-        {
-          "sourceVolume": "webdata",
-          "containerPath": "/mnt"
-        }
+	    "mountPoints": [
+                {
+                   "sourceVolume": "webdata",
+                   "containerPath": "/mnt"
+                }
       ]
         }
     ]
