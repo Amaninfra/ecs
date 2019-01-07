@@ -7,17 +7,24 @@
             "cpu": 10,
             "memory": 256,
             "essential": true,
-	    "mountPoints": [
-              {
-                 "readOnly": null,
-                 "containerPath": "/opt",
-                 "sourceVolume": "/opt"
-              }
-            ],
             "portMappings": [
                 {
                     "containerPort": 80,
                     "hostPort": 80
+                }
+            ],
+			"volumes": [
+                {
+                    "name": "my",
+                    "host": {
+                        "sourcePath": "/opt"
+                    }
+                }
+            ],
+            "mountPoints": [
+                {
+                  "sourceVolume": "my",
+                  "containerPath": "/mnt"
                 }
             ]
         }
