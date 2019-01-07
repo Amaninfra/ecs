@@ -2,12 +2,12 @@
     "family": "hello-world",
 	"volumes": [
     {
-      "name": "webdata",
+      "name": "webdata2",
       "host": {
-        "sourcePath": "/mnt"
-       }
-     }
-    ],
+        "sourcePath": "/opt"
+      }
+    }
+  ],
     "containerDefinitions": [
         {
             "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
@@ -22,9 +22,9 @@
                 }
             ],
 			"mountPoints": [
-               {
-                "sourceVolume": "webdata",
-                "containerPath": "/opt"
+        {
+          "sourceVolume": "webdata",
+          "containerPath": "/mnt"
         }
       ]
         }
