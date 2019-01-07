@@ -1,55 +1,17 @@
 {
-    "family": "console-sample-app",
-    "volumes": [
-        {
-            "name": "my-vol",
-            "host": {}
-        }
-    ],
+    "family": "hello-world",
     "containerDefinitions": [
         {
-            "environment": [],
+            "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
             "name": "hello-world",
-            "image": "438937437345.dkr.ecr.us-west-2.amazonaws.com/hello-world:v_117",
             "cpu": 10,
-            "memory": 500,
+            "memory": 256,
+            "essential": true,
             "portMappings": [
                 {
                     "containerPort": 80,
                     "hostPort": 80
                 }
-            ],
-            "mountPoints": [
-                {
-                    "sourceVolume": "my-vol",
-                    "containerPath": "/var/www/my-vol"
-                }
-            ],
-            "entryPoint": [
-                "/usr/sbin/apache2",
-                "-D",
-                "FOREGROUND"
-            ],
-            "essential": true
-        },
-        {
-            "name": "busybox",
-            "image": "busybox",
-            "cpu": 10,
-            "memory": 500,
-            "volumesFrom": [
-            {
-              "sourceContainer": "hello-world"
-            }
-            ],
-            "entryPoint": [
-                "sh",
-                "-c"
-            ],
-            "command": [
-                "/bin/sh -c \"while true; do /bin/date > /var/www/my-vol/date; sleep 1; done\""
-            ],
-            "essential": false
+            ]
         }
     ]
-}
