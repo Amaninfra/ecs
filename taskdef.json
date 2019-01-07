@@ -1,32 +1,55 @@
 {
-    "family": "hello-world",
+    "family": "console-sample-app",
     "volumes": [
-    {
-      "name": "webdata2",
-      "host": {
-        "sourcePath": "/opt"
-      }
-    }
-  ],
-   "containerDefinitions": [
         {
-            "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
+            "name": "my-vol",
+            "host": {}
+        }
+    ],
+    "containerDefinitions": [
+        {
+            "environment": [],
             "name": "hello-world",
+            "image": "438937437345.dkr.ecr.us-west-2.amazonaws.com/hello-world:v_117",
             "cpu": 10,
-            "memory": 256,
-            "essential": true,
+            "memory": 500,
             "portMappings": [
                 {
                     "containerPort": 80,
                     "hostPort": 80
                 }
             ],
-	    "mountPoints": [
+            "mountPoints": [
                 {
-                  "sourceVolume": "webdata2",
-                  "containerPath": "/mnt"
+                    "sourceVolume": "my-vol",
+                    "containerPath": "/var/www/my-vol"
                 }
-      ]
+            ],
+            "entryPoint": [
+                "/usr/sbin/apache2",
+                "-D",
+                "FOREGROUND"
+            ],
+            "essential": true
+        },
+        {
+            "name": "busybox",
+            "image": "busybox",
+            "cpu": 10,
+            "memory": 500,
+            "volumesFrom": [
+            {
+              "sourceContainer": "hello-world"
+            }
+            ],
+            "entryPoint": [
+                "sh",
+                "-c"
+            ],
+            "command": [
+                "/bin/sh -c \"while true; do /bin/date > /var/www/my-vol/date; sleep 1; done\""
+            ],
+            "essential": false
         }
     ]
 }
