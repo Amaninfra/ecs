@@ -21,5 +21,13 @@
                 }
       ]
         }
-    ]
+    ],
+    "volumes": [
+     {
+      "name": "webdata2",
+      "host": {
+        "sourcePath": "/opt"
+      }
+    }
+   ]
 }
