@@ -1,14 +1,6 @@
 {
     "family": "hello-world",
-        "volumes": [
-     {
-      "name": "webdata2",
-      "host": {
-        "sourcePath": "/opt"
-      }
-    }
-   ],
-  "containerDefinitions": [
+    "containerDefinitions": [
         {
             "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
             "name": "hello-world",
