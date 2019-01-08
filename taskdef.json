@@ -24,9 +24,8 @@
     ],
     "volumes": [
      {
-      "host": {
-        "sourcePath": "/opt"
+      "/hostshare:/containershare"
       }
-    }
+     ]
    ]
 }
