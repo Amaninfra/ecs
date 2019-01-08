@@ -1,5 +1,5 @@
 {
-    "family": "hello-world", 
+  "family": "hello-world", 
   "containerDefinitions": [
         {
             "image": "438937437345.dkr.ecr.us-west-2.amazonaws.com/hello-world:v_128",
@@ -12,23 +12,5 @@
                     "containerPort": 80,
                     "hostPort": 80
                 }
-            ],
-                        "essential": true,
-                        "mountPoints": [
-                {
-                  "sourceVolume": "webdata2",
-                  "containerPath": "/mnt"
-                }
-      ]
-	  
-        }
-    ],
-	"volumes": [
-       {
-          "name": "webdata2",
-          "host": {
-          "sourcePath": "/opt"
-      }
-    }
-   ]
+            ]
 }
