@@ -21,8 +21,8 @@
                     "hostPort": 80
                 }
             ],
-                        "essential": true,
-                        "mountPoints": [
+             "essential": true,
+             "mountPoints": [
                 {
                   "sourceVolume": "webdata2",
                   "containerPath": "/mnt"
