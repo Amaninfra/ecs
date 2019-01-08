@@ -1,15 +1,14 @@
 {
-    "family": "hello-world",
-	"volumes": [
+"taskDefinition": {
+   "volumes": [
     {
       "name": "webdata2",
       "host": {
         "sourcePath": "/opt"
       }
     }
-   }
-  ],
-  "containerDefinitions": [
+   ],
+     "containerDefinitions": [
         {
             "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
             "name": "hello-world",
@@ -30,5 +29,40 @@
                 }
       ]
         }
-    ]
+    ],
+    "family": "hello-world"
+}{
+"taskDefinition": {
+   "volumes": [
+    {
+      "name": "webdata2",
+      "host": {
+        "sourcePath": "/opt"
+      }
+    }
+   ],
+     "containerDefinitions": [
+        {
+            "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
+            "name": "hello-world",
+            "cpu": 10,
+            "memory": 256,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80
+                }
+            ],
+			"essential": true,
+			"mountPoints": [
+                {
+                  "sourceVolume": "webdata2",
+                  "containerPath": "/mnt"
+                }
+      ]
+        }
+    ],
+    "family": "hello-world"
+}
 }
