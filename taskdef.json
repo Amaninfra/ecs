@@ -3,7 +3,7 @@
   "containerDefinitions": [
         {
             "image": "438937437345.dkr.ecr.us-west-2.amazonaws.com/hello-world:v_128",
-            "name2": "hello-world",
+            "name": "hello-world",
             "cpu": 10,
             "memory": 256,
             "essential": true,
