@@ -24,7 +24,7 @@
     ],
     "volumes": [
      {
-      "/hostshare:/containershare"
+      "/srv:/opt"
       }
      ]
    ]
