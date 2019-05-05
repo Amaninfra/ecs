@@ -9,23 +9,8 @@
             "essential": true,
             "portMappings": [
                 {
-                    "containerPort": 4000,
+                    "containerPort": 80,
                     "hostPort": 80
-                }
-            ],
-           "name": "mnt",
-            "volumes": [
-                {
-                    "name": "mnt",
-                    "host": {
-                        "sourcePath": "/mnt"
-                    }
-                }
-            ],
-	    "mountPoints": [
-                {
-                  "sourceVolume": "mnt",
-                  "containerPath": "/data"
                 }
             ]
         }
