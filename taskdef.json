@@ -14,7 +14,7 @@
               "mountPoints": [{
                       "sourceVolume": "webdata",
                       "containerPath": "/usr/share/nginx/html",
-                      "readOnly": true
+
               }]
       }
       "volumes": [{
