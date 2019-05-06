@@ -16,7 +16,7 @@
               "sourceVolume": "my",
                "containerPath": "/root/www",
               "readOnly": false
-              },
+              }
               "volumes": [
              {
                 "host": {
