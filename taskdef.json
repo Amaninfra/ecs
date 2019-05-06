@@ -7,22 +7,17 @@
             "cpu": 10,
             "memory": 256,
             "essential": true,
-			"volumes": [
-        {
-            "host": {
-                "sourcePath": "/mnt"
-            },
-            "name": "mnt"
-        }
-    ],
-	
-  "mountPoints": [
-        {
-          "readOnly": false,
-          "containerPath": "/root/www",
-          "sourceVolume": "mnt"
-        }
-      ],
+	    "mountPoints": [{
+                  "sourceVolume": "webdata",
+                  "containerPath": "/root/www",
+                  "readOnly": false
+              }],
+             "volumes": [{
+              "name": "webdata",
+              "host": {
+                      "sourcePath": "/opt"
+              }}
+         ],
             "portMappings": [
                 {
                     "containerPort": 80,
