@@ -1,18 +1,37 @@
 {
-    "family": "test",
-    "containerDefinitions": [
-        {
-            "image": "122160613195.dkr.ecr.us-east-2.amazonaws.com/test:latest",
-            "name": "test",
-            "cpu": 10,
-            "memory": 256,
-            "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": 80,
-                    "hostPort": 80
-                }
-            ]
-        }
-    ]
+      "family": "test",
+      "containerDefinitions": [
+      {
+              "name": "web",
+              "image": "nginx",
+              "cpu": 99,
+              "memory": 100,
+              "portMappings": [{
+                      "containerPort": 80,
+                      "hostPort": 80
+              }],
+              "essential": true,
+              "mountPoints": [{
+                      "sourceVolume": "webdata",
+                      "containerPath": "/usr/share/nginx/html",
+                      "readOnly": true
+              }]
+      }, {
+              "name": "timer",
+              "image": "busybox",
+              "cpu": 10,
+              "memory": 20,
+              "entryPoint": ["sh", "-c"],
+              "command": ["while true; do date > /nginx/index.html; sleep 1; done"],
+              "mountPoints": [{
+                      "sourceVolume": "webdata",
+                      "containerPath": "/nginx/"
+              }]
+      }],
+      "volumes": [{
+              "name": "webdata",
+              "host": {
+                      "sourcePath": "/ecs/webdata"
+              }}
+      ]
 }
