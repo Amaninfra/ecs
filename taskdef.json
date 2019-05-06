@@ -16,18 +16,7 @@
                       "containerPath": "/usr/share/nginx/html",
                       "readOnly": true
               }]
-      }, {
-              "name": "timer",
-              "image": "busybox",
-              "cpu": 10,
-              "memory": 20,
-              "entryPoint": ["sh", "-c"],
-              "command": ["while true; do date > /nginx/index.html; sleep 1; done"],
-              "mountPoints": [{
-                      "sourceVolume": "webdata",
-                      "containerPath": "/nginx/"
-              }]
-      }],
+      }
       "volumes": [{
               "name": "webdata",
               "host": {
