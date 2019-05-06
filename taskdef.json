@@ -16,6 +16,11 @@
                       "containerPath": "/root/www",
                       "readOnly": true
               }]
+              "volumes": [{
+              "name": "webdata",
+              "host": {
+                      "sourcePath": "/opt"
+              }}
       }
       ]
 }
