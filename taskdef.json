@@ -2,7 +2,7 @@
       "family": "test",
       "containerDefinitions": [
       {
-              "name": "web",
+              "name": "test",
               "image": "nginx",
               "cpu": 99,
               "memory": 100,
