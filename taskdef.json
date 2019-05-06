@@ -28,3 +28,24 @@
       ],
       "essential": true
     },
+    {
+      "name": "busybox",
+      "image": "busybox",
+      "volumesFrom": [
+        {
+          "sourceContainer": "web"
+        }
+      ],
+      "cpu": 100,
+      "memory": 500,
+      "entryPoint": [
+        "sh",
+        "-c"
+      ],
+      "command": [
+        "echo $(date) > /usr/local/apache2/htdocs/empty_volume/date && echo $(date) > /usr/local/apache2/htdocs/host_etc/date && echo $(date) > /usr/local/apache2/htdocs/dockerfile_volume/date"
+      ],
+      "essential": false
+    }
+  ]
+}
