@@ -1,29 +1,18 @@
 {
-      "family": "test",
-      "containerDefinitions": [
-      {
-              "name": "test",
-              "image": "122160613195.dkr.ecr.us-east-2.amazonaws.com/test:latest",
-              "cpu": 99,
-              "memory": 100,
-              "portMappings": [{
-                      "containerPort": 80,
-                      "hostPort": 80
-              }],
-              "essential": true,
-              "mountPoints": [
-              {
-              "sourceVolume": "my",
-               "containerPath": "/root/www",
-              "readOnly": false
-              }
-              "volumes": [
-             {
-                "host": {
-                "sourcePath": "/opt"
-             },
-              "name": "my"
-            }
-      }
-      ]
+    "family": "test",
+    "containerDefinitions": [
+        {
+            "image": "122160613195.dkr.ecr.us-east-2.amazonaws.com/test:latest",
+            "name": "test",
+            "cpu": 10,
+            "memory": 256,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80
+                }
+            ]
+        }
+    ]
 }
