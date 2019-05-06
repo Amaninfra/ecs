@@ -1,26 +1,30 @@
 {
-      "family": "test",
-      "containerDefinitions": [
-      {
-              "name": "test",
-              "image": "nginx",
-              "cpu": 99,
-              "memory": 100,
-              "portMappings": [{
-                      "containerPort": 80,
-                      "hostPort": 80
-              }],
-              "essential": true,
-              "mountPoints": [{
-                      "sourceVolume": "webdata",
-                      "containerPath": "/usr/share/nginx/html",
-
-              }]
+  "family": "test",
+  "volumes": [
+    {
+      "name": "my",
+      "host": {
+        "sourcePath": "/opt"
       }
-      "volumes": [{
-              "name": "webdata",
-              "host": {
-                      "sourcePath": "/ecs/webdata"
-              }}
-      ]
-}
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "test",
+      "image": "122160613195.dkr.ecr.us-east-2.amazonaws.com/test:latest",
+      "cpu": 100,
+      "memory": 500,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "my",
+          "containerPath": "/root/www"
+        }
+      ],
+      "essential": true
+    },
