@@ -7,6 +7,22 @@
             "cpu": 10,
             "memory": 256,
             "essential": true,
+			"volumes": [
+        {
+            "host": {
+                "sourcePath": "/mnt"
+            },
+            "name": "mnt"
+        }
+    ],
+	
+  "mountPoints": [
+        {
+          "readOnly": false,
+          "containerPath": "/root/www",
+          "sourceVolume": "mnt"
+        }
+      ],
             "portMappings": [
                 {
                     "containerPort": 80,
