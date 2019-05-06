@@ -11,16 +11,19 @@
                       "hostPort": 80
               }],
               "essential": true,
-              "mountPoints": [{
-                      "sourceVolume": "webdata",
-                      "containerPath": "/root/www",
-                      "readOnly": true
-              }]
-              "volumes": [{
-              "name": "webdata",
-              "host": {
-                      "sourcePath": "/opt"
-              }}
+              "mountPoints": [
+              {
+              "sourceVolume": "my",
+               "containerPath": "/root/www",
+              "readOnly": false
+              },
+              "volumes": [
+             {
+                "host": {
+                "sourcePath": "/opt"
+             },
+              "name": "my"
+            }
       }
       ]
 }
