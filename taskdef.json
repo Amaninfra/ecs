@@ -1,5 +1,5 @@
 {
-    "family": "new",
+    "family": "test",
     "containerDefinitions": [
         {
             "image": "122160613195.dkr.ecr.us-east-2.amazonaws.com/test:latest",
