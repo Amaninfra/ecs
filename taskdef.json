@@ -1,4 +1,5 @@
 {
+   "family": "test",	
    "volumes": [
     {
       "name": "applicationData",
@@ -6,9 +7,8 @@
         "sourcePath": "/opt/aman"
       }
     }
-  ]
-	"family": "test",
-    "containerDefinitions": [
+  ],
+"containerDefinitions": [
         {
             "image": "122160613195.dkr.ecr.us-east-2.amazonaws.com/test:latest",
             "name": "test",
@@ -21,7 +21,7 @@
                     "hostPort": 80
                 }
             ],
-			"mountPoints": [
+	"mountPoints": [
         {
           "sourceVolume": "applicationData",
           "containerPath": "/root/www"
