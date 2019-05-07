@@ -15,7 +15,7 @@
             ],
             "mountPoints": [
                 {
-                    "containerPath": "/root/www",
+                    "containerPath": "/www",
                     "sourceVolume": "test"
                 }
           ]
