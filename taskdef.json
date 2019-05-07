@@ -13,16 +13,22 @@
                     "hostPort": 80
                 }
             ],
-           "Mounts": [
-            {
-                "Type": "bind",
-                "Source": "/opt/aman",
-                "Destination": "/root/www",
-                "Mode": "",
-                "RW": true,
-                "Propagation": "rprivate"
-            }
-        ]
+            "mountPoints": [
+               {
+                    "readOnly": null,
+                    "containerPath": "/test",
+                    "sourceVolume": "test"
+               }
+            ],
         }
-    ]
+  ]
+  "volumes": [
+    {
+      "name": "test",
+      "host": {
+        "sourcePath": "/test"
+      },
+      "dockerVolumeConfiguration": null
+    }
+  ]
 }
