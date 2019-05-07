@@ -12,7 +12,23 @@
                     "containerPort": 80,
                     "hostPort": 80
                 }
-            ]
+            ],
+            "mountPoints": [
+                {
+                    "readOnly": null,
+                    "containerPath": "/test",
+                    "sourceVolume": "test"
+                }
+          ]
         }
-    ]
+    ],
+  "volumes": [
+    {
+      "name": "test",
+      "host": {
+        "sourcePath": "/test"
+      },
+      "dockerVolumeConfiguration": null
+    }
+  ]
 }
