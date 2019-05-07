@@ -19,7 +19,7 @@
                     "containerPath": "/test",
                     "sourceVolume": "test"
                }
-            ],
+            ]
         }
   ]
   "volumes": [
